@@ -1,0 +1,137 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+!scripts/lib/
+!scripts/lib/**
+scripts/lib/__pycache__/
+scripts/lib/**/*.py[cod]
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv
+conda-env/
+.conda/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Gurobi
+gurobi.log
+*.lp
+*.mps
+*.rlp
+*.ilp
+*.sol
+
+# Experiment Outputs
+outputs/*
+!outputs/.gitkeep
+results/
+paper_runs/
+tuning_runs/
+tmp/
+experiment_run.log
+RESULTS_SUMMARY.md
+logs/
+
+# Plots and Figures
+plots/
+*.png
+*.pdf
+*.jpg
+*.jpeg
+*.svg
+
+# Data
+data/
+!data/
+data/*
+!data/Energy/
+data/Energy/*
+!data/Energy/README.md
+*.csv
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+configs/temp_*.yaml
+configs/generated/
+
+# Config files (if sensitive)
+# config/local_*.yaml
+# config/private_*.yaml
+
+# Documentation build
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Profiling
+*.prof
+*.lprof
+
+local_scripts/
+slurm/

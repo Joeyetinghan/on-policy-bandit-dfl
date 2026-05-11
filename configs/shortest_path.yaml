@@ -1,0 +1,70 @@
+seed: 42
+T: 2000
+benchmark: shortest_path
+solver_backend: native  # 'native' or 'gurobi'
+p: 10
+d: 40
+grid_size: 5
+feedback_mode: bandit  # 'bandit', 'semi_bandit', or 'full_feedback'
+deg: 8
+eps_bar: 0.5
+data_generator_family: shortest_path_calibrated_poly
+poly_offset: 1.0
+poly_scale: 1.0
+
+# Model selection
+model_type: linear  # 'linear', 'nn', 'diffusion', or 'cnf'
+nuisance_hidden_dims: [256, 256]
+torch_device: auto
+generative_lr: 0.001  # safer default for generative models; tuned presets may override this
+generative_weight_decay: 0.0
+generative_grad_clip_norm: null
+generative_baseline_momentum: null
+generative_surrogate_num_iter: 64
+diffusion_num_steps: 50
+diffusion_beta_start: 0.0001
+diffusion_beta_end: 0.02
+diffusion_time_embed_dim: 8
+diffusion_hidden_dim: 128
+diffusion_inference_steps: 50
+diffusion_ddim_eta: 0.0
+flow_num_coupling_layers: 2
+flow_hidden_dim: 128
+flow_log_scale_min: -5.0
+flow_log_scale_max: 5.0
+
+# Policy sampling / exploration
+perturbation_distribution: normal
+perturbation_student_df: 3.0
+policy_sampling_scale: 0.39073551481857954
+exploration_epsilon: 0.0
+baseline_momentum: 0.95
+
+# DFHPG hybrid update
+run_hybrid_bandit: true
+hybrid_loss_type: pairwise_diff
+hybrid_mse_weight: 0.0
+hybrid_alpha_schedule: adaptive_nuisance_reliability
+hybrid_alpha_max: 0.5
+hybrid_alpha_min: 0.05
+hybrid_alpha_warmup_frac: 0.05
+hybrid_alpha_ema_decay: 0.98
+hybrid_alpha_smooth: 0.05
+policy_baseline_type: nuisance_induced
+hybrid_gradient_normalization: false
+
+# Optimizer parameters
+theta_lr_schedule: shifted_inverse_time
+theta_lr: 0.03
+theta_lr_offset: 100
+nuisance_lr_schedule: shifted_inverse_time
+nuisance_lr: 0.015
+nuisance_lr_offset: 100
+lambda_reg: 0.0
+grad_clip_norm: 10.0
+model_update_batch_rounds: 1
+nuisance_update_batch_rounds: 1
+
+# Algorithm toggles
+run_random_oracle: true
+run_true_model: true

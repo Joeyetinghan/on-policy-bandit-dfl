@@ -1,0 +1,70 @@
+seed: 42
+T: 2000
+benchmark: pricing
+solver_backend: native
+n_products: 20
+num_price_levels: 4
+pricing_context_dim: 25
+pricing_context_degree: 8
+pricing_price_degree: 8
+promotion_budget: 10
+pricing_num_low_levels: 2
+pricing_common_shock_sigma: 0.1
+feedback_mode: bandit  # 'bandit', 'semi_bandit', or 'full_feedback'
+feedback_delay: 0
+
+# Model selection
+model_type: shared_linear  # 'shared_linear', 'shared_nn', 'shared_diffusion', or 'shared_cnf'
+shared_generative_row_batch_size: 256
+torch_device: auto
+generative_lr: 0.001
+generative_weight_decay: 0.0
+generative_grad_clip_norm: null
+generative_baseline_momentum: null
+generative_surrogate_num_iter: 64
+diffusion_num_steps: 50
+diffusion_beta_start: 0.0001
+diffusion_beta_end: 0.02
+diffusion_time_embed_dim: 8
+diffusion_hidden_dim: 128
+diffusion_inference_steps: 50
+diffusion_ddim_eta: 0.0
+flow_num_coupling_layers: 2
+flow_hidden_dim: 128
+flow_log_scale_min: -5.0
+flow_log_scale_max: 5.0
+
+# Policy sampling / exploration
+perturbation_distribution: normal
+perturbation_student_df: 3.0
+policy_sampling_scale: 0.000108139196138001
+exploration_epsilon: 0.0
+baseline_momentum: 0.95
+
+# DFHPG hybrid update
+run_hybrid_bandit: true
+hybrid_loss_type: dbb
+hybrid_mse_weight: 0.0
+hybrid_alpha_schedule: adaptive_nuisance_reliability
+hybrid_alpha_max: 0.2
+hybrid_alpha_min: 0.01
+hybrid_alpha_warmup_frac: 0.05
+hybrid_alpha_ema_decay: 0.98
+hybrid_alpha_smooth: 0.05
+policy_baseline_type: nuisance_induced
+hybrid_gradient_normalization: true
+# Optimizer parameters
+theta_lr_schedule: shifted_inverse_time
+theta_lr: 0.009847103981195
+theta_lr_offset: 100
+nuisance_lr_schedule: shifted_inverse_time
+nuisance_lr: 0.0049235519905975
+nuisance_lr_offset: 100
+lambda_reg: 0.0
+grad_clip_norm: 10.0
+model_update_batch_rounds: 1
+nuisance_update_batch_rounds: 1
+
+# Algorithm toggles
+run_random_oracle: true
+run_true_model: true
