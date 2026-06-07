@@ -1,7 +1,8 @@
 # Decision-Focused On-Policy Learning for Contextual Linear Optimization with Partial Feedback
 
 Code accompanying the paper *Decision-Focused On-Policy Learning
-for Contextual Linear Optimization with Partial Feedback*.
+for Contextual Linear Optimization with Partial Feedback*
+([arXiv:2606.01081](https://arxiv.org/abs/2606.01081)).
 
 ## Benchmarks
 
@@ -91,4 +92,19 @@ python scripts/tune.py summarize-point \
   --outdir tuning_runs/topk_tune/summary \
   --selected-out tuning_runs/topk_tune/selected_configs.yaml
 python scripts/tune.py generative --problem topk --campaign topk_gen_tune
+```
+
+## Citation
+
+If you use this code, please cite:
+
+```bibtex
+@article{benslimane2026dfonpolicy,
+  title   = {Decision-Focused On-Policy Learning for Contextual Linear
+             Optimization with Partial Feedback},
+  author  = {Benslimane, Wyame and Ye, Tinghan and
+             Van Hentenryck, Pascal and Grigas, Paul},
+  journal = {arXiv preprint arXiv:2606.01081},
+  year    = {2026}
+}
 ```
